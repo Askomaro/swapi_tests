@@ -2,7 +2,7 @@ from resources.base_resource import BaseResource
 
 
 class FilmsResource(BaseResource):
-    _URL_API_PATH = '/films'
+    _URL_API_PATH = 'films'
 
     def __init__(self):
         BaseResource.__init__(self)
