@@ -10,8 +10,12 @@ class PeopleResource(BaseResource):
                                       self._HOST,
                                       self._URL_API_PATH)
 
-    def get_people(self):
-        return self._get_response(self.__url_path)
+    def get_people(self, page=None):
+        params = {
+            'page': page
+        }
+
+        return self._get_response(self.__url_path, params=params)
 
     def get_person(self, person_id):
         return self._get_response('%s/%s' % (self.__url_path, person_id))

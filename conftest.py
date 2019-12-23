@@ -2637,3 +2637,8 @@ def get_people():
         return people[id - 1] if id else people
 
     return _get_people
+
+
+@pytest.fixture
+def people_first_page(get_people):
+    return get_people()[:10]
