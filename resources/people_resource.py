@@ -1,8 +1,8 @@
 from resources.base_resource import BaseResource
 
 
-class FilmsResource(BaseResource):
-    _URL_API_PATH = '/people'
+class PeopleResource(BaseResource):
+    _URL_API_PATH = 'people'
 
     def __init__(self):
         BaseResource.__init__(self)
@@ -13,5 +13,5 @@ class FilmsResource(BaseResource):
     def get_people(self):
         return self._get_response(self.__url_path)
 
-    def get_person(self, film_id):
-        return self._get_response(self.__url_path)
+    def get_person(self, person_id):
+        return self._get_response('%s/%s' % (self.__url_path, person_id))
