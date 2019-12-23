@@ -6,7 +6,7 @@ class FilmsResource(BaseResource):
 
     def __init__(self):
         BaseResource.__init__(self)
-        self.__url_path = "%s%s%s" % (self._SCHEMA,
+        self.__url_path = '%s%s%s' % (self._SCHEMA,
                                       self._HOST,
                                       self._URL_API_PATH)
 
@@ -14,4 +14,4 @@ class FilmsResource(BaseResource):
         return self._get_response(self.__url_path)
 
     def get_film(self, film_id):
-        return self._get_response(self.__url_path)
+        return self._get_response('%s/%s' % (self.__url_path, film_id))
