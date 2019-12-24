@@ -1,11 +1,13 @@
 import pytest
 
+from helpers.time_execution import time_execution
 from resources.films_resource import FilmsResource
 
 __author__ = 'anton.skomarovskyi@gmail.com'
 
 
 class TestFilms:
+    @time_execution
     def test_check_films(self, get_films):
         # arrange
         expected_result = {
@@ -22,6 +24,7 @@ class TestFilms:
         # assert
         assert resp == expected_result
 
+    @time_execution
     @pytest.mark.parametrize('id', [1, 2, 3, 4, 5, 6, 7])
     def test_check_film_number_(self, id, get_films):
         # arrange
